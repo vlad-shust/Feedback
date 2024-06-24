@@ -8,3 +8,5 @@
   <sup>MONGODB_URI=mongodb+srv://FeedbackTestUser:marker-feedback@cluster0.plzstnt.mongodb.net/Feedback?retryWrites=true&w=majority&appName=Cluster0  
   PORT=3000</sup>  
  9. run ***npm run dev***
+
+Node version on the local should be 18.0.0+
