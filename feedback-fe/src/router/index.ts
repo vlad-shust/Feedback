@@ -6,16 +6,20 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: '/',
+      redirect: '/list',
+    },
+    {
       path: '/list',
       name: 'feedbackList',
-      component: FeedbackListing
+      component: FeedbackListing,
     },
     {
       path: '/new-feedback',
       name: 'newFeedback',
-      component: FeedbackForm
+      component: FeedbackForm,
     },
-  ]
-})
+  ],
+});
 
 export default router;
