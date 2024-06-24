@@ -18,7 +18,7 @@
 </script>
 
 <template>
-  <div class="flex flex-col items-center py-14 max-w-3xl text-left">
+  <div class="flex flex-col py-14 max-w-2xl mx-auto text-left">
     <div>
       <p class="text-custom-light-gray text-xs">{{ minutesAgo }} minutes ago</p>
       <div class="flex items-center mt-2 mb-2">

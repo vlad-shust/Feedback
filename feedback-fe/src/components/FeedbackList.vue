@@ -15,6 +15,16 @@ const props = defineProps({
     required: true,
     default: () => defaultFeedback,
   },
+  currentPage: {
+    type: Number,
+    required: true,
+    default: 1
+  },
+  totalPages: {
+    type: Number,
+    required: true,
+    default: 1
+  }
 });
 
 const sortDirections: Record<'asc' | 'desc', 'asc' | 'desc'> = {
@@ -75,8 +85,31 @@ const sortedFeedbackList = computed(() => {
         </button>
       </div>
     </div>
-    <div v-for="item in sortedFeedbackList" :key="item._id" class="mt-3">
-      <feedback-item :feedback="item" class="mb-3" @click="$emit('selectItem', item)" :is-selected="item._id === selectedItem._id" />
+    <div v-for="item in sortedFeedbackList" :key="item._id" class="mt-1">
+      <feedback-item :feedback="item" class="mb-1" @click="$emit('selectItem', item)" :is-selected="item._id === selectedItem._id" />
     </div>
+
+    <div class="flex justify-center mt-4">
+      <button 
+        class="px-2 py-1 rounded mr-2 
+              bg-gray-100 text-custom-blue-gray 
+              enabled:hover:bg-gray-200 
+              disabled:bg-gray-300 disabled:text-gray-400" 
+        :disabled="currentPage === 1" 
+        @click="$emit('previousPage')">
+        Previous
+      </button>
+      <span class="text-custom-blue-gray">{{ currentPage }} / {{ totalPages }}</span>
+      <button 
+        class="px-2 py-1 rounded 
+              bg-gray-100 text-custom-blue-gray 
+              enabled:hover:bg-gray-300 
+              disabled:bg-gray-300 disabled:text-gray-400 ml-2" 
+        :disabled="currentPage === totalPages" 
+        @click="$emit('nextPage')">
+        Next
+      </button>
+    </div>
+
   </div>
 </template>

@@ -12,3 +12,9 @@ export enum FeedbackType {
   Bug = 'Bug',
   Suggestion = 'Suggestion',
 };
+
+export interface FeedbackResponse {
+  totalPages: number;
+  currentPage: number;
+  feedbackEntries: Feedback[];
+};

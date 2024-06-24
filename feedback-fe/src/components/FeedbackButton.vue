@@ -12,10 +12,10 @@
 
   const buttonClass = computed(() => {
       switch (props.mode) {
-          case ButtonTypes.Primary:
-              return 'bg-custom-green text-white button-primary';
-          case ButtonTypes.Secondary:
-              return 'bg-custom-gray color-custom-blue-gray button-secondary';
+        case ButtonTypes.Primary:
+            return 'bg-custom-green text-white button-primary';
+        case ButtonTypes.Secondary:
+            return 'bg-custom-gray color-custom-blue-gray button-secondary';
       }
   });
 </script>
