@@ -1,4 +1,4 @@
-1. clone repo
+1. Clone the repository
 2. Open *feedback-fe* package
 3. Run **npm install**
 4. Run **npm run dev**
