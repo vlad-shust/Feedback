@@ -89,7 +89,7 @@ const sortedFeedbackList = computed(() => {
       <feedback-item :feedback="item" class="mb-1" @click="$emit('selectItem', item)" :is-selected="item._id === selectedItem._id" />
     </div>
 
-    <div class="flex justify-center mt-4">
+    <div v-if="totalPages > 1" class="flex justify-center mt-4">
       <button 
         class="px-2 py-1 rounded mr-2 
               bg-gray-100 text-custom-blue-gray 
